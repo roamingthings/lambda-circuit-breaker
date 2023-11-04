@@ -11,6 +11,7 @@ val longDescription = "A circuit breaker implementation intended for AWS Lambda 
         "a StepFunctions state machine.."
 
 group = "de.roamingthings"
+version = "local"
 
 repositories {
     mavenCentral()
