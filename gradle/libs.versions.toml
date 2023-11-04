@@ -9,7 +9,7 @@ awsSdk = "2.21.11"
 junit = "5.10.0"
 logbackVersion = "1.4.11"
 lombok = "1.18.30"
-mockito = "5.6.0"
+mockito = "5.7.0"
 slf4j = "2.0.9"
 
 [libraries]
