@@ -1,0 +1,37 @@
+[versions]
+aspectj = "1.9.20.1"
+aspectjPlugin = "8.4"
+assertj = "3.24.2"
+awsDynamoDBLocal = "[1.12,2.0)"
+awsLambdaCore = "1.2.3"
+awsLambdaTest = "1.1.1"
+awsSdk = "2.21.11"
+junit = "5.10.0"
+logbackVersion = "1.4.11"
+lombok = "1.18.30"
+mockito = "5.6.0"
+slf4j = "2.0.9"
+
+[libraries]
+aspectj-rt = { module = "org.aspectj:aspectjrt", version.ref = "aspectj" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+aws-lambda-javaCore = { module = "com.amazonaws:aws-lambda-java-core", version.ref = "awsLambdaCore" }
+aws-lambda-javaTest = { module = "com.amazonaws:aws-lambda-java-tests", version.ref = "awsLambdaTest" }
+aws-dynamoDBLocal = { module = "com.amazonaws:DynamoDBLocal", version.ref = "awsDynamoDBLocal" }
+aws-sdk-dynamodb = { module = "software.amazon.awssdk:dynamodb", version.ref = "awsSdk" }
+aws-sdk-urlConnectionClient = { module = "software.amazon.awssdk:url-connection-client", version.ref = "awsSdk" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logbackVersion" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+[bundles]
+test-common = ["assertj-core", "mockito-core", "mockito-junit-jupiter", "junit-jupiter-params"]
+logging = ["logback", "slf4j-api"]
+
+[plugins]
+aspectj-postCompileWeaving = { id = "io.freefair.aspectj.post-compile-weaving", version.ref = "aspectjPlugin" }
+aspectj = { id = "io.freefair.aspectj", version.ref = "aspectjPlugin" }
